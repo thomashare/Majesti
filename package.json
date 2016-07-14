@@ -1,0 +1,41 @@
+{
+  "name": "majesti",
+  "version": "1.0.0",
+  "description": "A beautiful web development framework.",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomashare/Majesti.git"
+  },
+  "keywords": [
+    "starter",
+    "web",
+    "website",
+    "framework",
+    "jade",
+    "pug",
+    "stylus",
+    "gulp",
+    "base",
+    "basic",
+    "simple",
+    "design",
+    "development"
+  ],
+  "author": "Tommy Hare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomashare/Majesti/issues"
+  },
+  "homepage": "https://github.com/thomashare/Majesti#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-pug": "^3.0.3",
+    "gulp-stylus": "^2.5.0",
+    "gulp-svg2png": "^2.0.0"
+  }
+}
