@@ -1,22 +1,36 @@
+// Require all node modules
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pug = require('gulp-pug');
 var stylus = require('gulp-stylus');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
+var coffee = require('gulp-coffee');
+var uglify = require('gulp-uglify');
 var svgo = require('gulp-svgo');
 var svg2png = require('gulp-svg2png');
 
+// Local server address
+var serverAddress = 'localhost:3000'
+
+// Build or rebuild files
+gulp.task('build', function() {
+  
+  
+  
+});
+
 // Static Server + watching styl/jade files
-gulp.task('serve', ['stylus'], function() {
+gulp.task('serve', function() {
 
   browserSync.init({
-    proxy: '/Users/tommy/webapps/Majesti/index.html'
+    proxy: serverAddress
   });
 
-  gulp.watch("static/styl/**/*.styl", ['stylus']);
-  gulp.watch("static/styl/**/*.styl", ['pug']);
-  gulp.watch("static/svg/**/*.svg", ['svg2png']);
+  gulp.watch("./static/styl/**/*.styl", ['stylus']);
+  gulp.watch("./templates/**/*.pug", ['pug']);
+  gulp.watch("./static/coffee/**/*.coffee", ['coffeescript']);
+  gulp.watch("./static/svg/**/*.svg", ['svg2png']);
   
 });
 
@@ -33,11 +47,11 @@ gulp.task("pug", function() {
 // Compile styl into CSS
 gulp.task('stylus', function() {
   
-  return gulp.src("static/styl/main.styl")
+  return gulp.src("./static/styl/main.styl")
     .pipe(stylus())
     .pipe(autoprefixer())
     .pipe(cssnano())
-    .pipe(gulp.dest("static/css"))
+    .pipe(gulp.dest("./static/css"))
     .pipe(browserSync.stream());
   
 });
@@ -53,4 +67,15 @@ gulp.task("svg2png", function() {
   
 });
 
-gulp.task('default', ['serve']);
+// Convert coffee files to js files
+gulp.task("coffeescript", function() {
+  
+  return gulp.src("./static/coffee/**/*.coffee")
+    .pipe(coffee())
+    .pipe(uglify())
+    .pipe(gulp.dest("./static/js"))
+    .pipe(browserSync.stream());
+  
+});
+
+gulp.task('default', ['stylus', 'pug', 'svg2png', 'coffeescript', 'serve']);
