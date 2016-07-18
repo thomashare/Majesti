@@ -8,44 +8,48 @@ var cssnano = require('gulp-cssnano');
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 var svgo = require('gulp-svgo');
-var svg2png = require('gulp-svg2png');
+var rename = require('gulp-rename');
+var fs = require('fs');
 
 // Local server address
-var serverAddress = 'localhost:3000'
-
-// Build or rebuild files
-gulp.task('build', function() {
-  
-  
-  
-});
+var serverAddress = 'localhost:3000';
 
 // Static Server + watching styl/jade files
-gulp.task('serve', function() {
+gulp.task("serve", function() {
 
   browserSync.init({
     proxy: serverAddress
   });
 
   gulp.watch("./static/styl/**/*.styl", ['stylus']);
-  gulp.watch("./templates/**/*.pug", ['pug']);
+  gulp.watch("./templates/**/*.pug", ['pug', 'index-to-root']);
   gulp.watch("./static/coffee/**/*.coffee", ['coffeescript']);
-  gulp.watch("./static/svg/**/*.svg", ['svg2png']);
+  gulp.watch("./static/svg/**/*.svg", ['svgo']);
   
 });
 
-// Convert pug files to html
-gulp.task("pug", function() {
+// Convert pug files to html and move to the pages folder in the root directory
+gulp.task("pug", function buildHTML() {
   
-  return gulp.src("./templates/jade/*/*.pug")
+  return gulp.src(['./templates/pages/!(global)/*.pug', './templates/pages/*.pug'])
     .pipe(pug())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest("./pages"))
+    .pipe(browserSync.stream());
+  
+});
+
+// Find the index or home pages index file and copy it to the root directory as 'index.html' after pug task is finished
+gulp.task("index-to-root", ["pug"], function() {
+          
+  return gulp.src("./pages/{home,index}/index.html")
+    .pipe(rename("index.html"))
+    .pipe(gulp.dest("./"))
     .pipe(browserSync.stream());
   
 });
 
 // Compile styl into CSS
-gulp.task('stylus', function() {
+gulp.task("stylus", function() {
   
   return gulp.src("./static/styl/main.styl")
     .pipe(stylus())
@@ -53,16 +57,15 @@ gulp.task('stylus', function() {
     .pipe(cssnano())
     .pipe(gulp.dest("./static/css"))
     .pipe(browserSync.stream());
-  
+
 });
 
-// Optimize svg files and convert them to png
-gulp.task("svg2png", function() {
+// Optimize svg files
+gulp.task("svgo", function() {
   
   return gulp.src("./static/svg/**/*.svg")
     .pipe(svgo())
-    .pipe(svg2png())
-    .pipe(gulp.dest('./static/img'))
+    .pipe(gulp.dest('./static/svg'))
     .pipe(browserSync.stream());
   
 });
@@ -78,4 +81,4 @@ gulp.task("coffeescript", function() {
   
 });
 
-gulp.task('default', ['stylus', 'pug', 'svg2png', 'coffeescript', 'serve']);
+gulp.task('default', ['stylus', 'pug', 'index-to-root', 'svgo', 'coffeescript', 'serve']);
