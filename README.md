@@ -4,7 +4,7 @@
 __A beautiful web development framework.__  
 Majesti was created to provide a starter template for web developers that uses the most legible preprocessors available - Streamlined with the help of [Gulp](http://gulpjs.com) and [Browsersync](https://www.browsersync.io).
 
-**Majesti** uses [Gulp](), [BrowserSync](), [Stylus](http://stylus-lang.com), [Pug](http://jade-lang.com), [CSS-Nano](http://cssnano.co), [Autoprefixer](https://github.com/postcss/autoprefixer), [Coffeescript](http://coffeescript.org/), [Uglify](https://github.com/mishoo/UglifyJS), [Svg2png](https://github.com/domenic/svg2png) and [Bower](https://bower.io) to speed up your workflow and get things done.
+**Majesti** uses [Gulp](http://gulpjs.com), [BrowserSync](https://www.browsersync.io), [Stylus](http://stylus-lang.com), [Pug](http://jade-lang.com), [CSS-Nano](http://cssnano.co), [Autoprefixer](https://github.com/postcss/autoprefixer), [Coffeescript](http://coffeescript.org/) and [Uglify](https://github.com/mishoo/UglifyJS) to speed up your workflow and get things done.
 
 ### Basic Usage
 Installation is simple. Either clone or download to the directory you want to place your site. Rename the folder to the name of your project.
@@ -17,7 +17,6 @@ Majesti
   |  /static
   |  /templates
 ```
-Open _gulpfile.js_ with your text editor and change the ``serverAddress`` variable to point to the location of your local server.
 
 1. If you do not have Node.js installed yet, install it from [here](https://nodejs.org/en).
 
@@ -53,7 +52,7 @@ ___
   - Majesti scans the templates/pages directory for either a home or index file/folder. This file is used to display the index or 'home page'.
   - The home/index page's index file is automatically copied to the root directory as 'index.html'.
   - It's strongly advised to use one or the other in your pages 'index' or 'home'.  
-    **Note:** If 'home' is used, the link to your home page will be something like ``domain.com/pages/home`` rather than ``domain.com/pages/index``.
+    **Note:** If 'home' is used, the link to your home page will be something like 'domain.com/pages/home' rather than 'domain.com/pages/index'.
     
 ___
 

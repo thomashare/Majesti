@@ -11,14 +11,11 @@ var svgo = require('gulp-svgo');
 var rename = require('gulp-rename');
 var fs = require('fs');
 
-// Local server address
-var serverAddress = 'localhost:3000';
-
 // Static Server + watching styl/jade files
 gulp.task("serve", function() {
 
   browserSync.init({
-    proxy: serverAddress
+    server: { baseDir: __dirname }
   });
 
   gulp.watch("./static/styl/**/*.styl", ['stylus']);
