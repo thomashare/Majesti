@@ -1,0 +1,42 @@
+{
+  "name": "majesti",
+  "description": "A beautiful web development framework.",
+  "main": "",
+  "authors": [
+    "Tommy Hare"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "starter",
+    "html",
+    "css",
+    "web",
+    "website",
+    "framework",
+    "jade",
+    "pug",
+    "stylus",
+    "svg2png",
+    "coffeescript",
+    "coffee",
+    "javascript",
+    "js",
+    "script",
+    "uglify",
+    "gulp",
+    "base",
+    "basic",
+    "simple",
+    "design",
+    "development",
+    "bower"
+  ],
+  "homepage": "https://github.com/thomashare/Majesti",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
