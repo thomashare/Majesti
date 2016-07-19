@@ -12,8 +12,11 @@ Installation is simple. Either clone or download to the directory you want to pl
 You will have these files:
 ```
 Majesti
+  |  bower.json
   |  gulpfile.js
+  |  index.html
   |  README.md
+  |  /pages
   |  /static
   |  /templates
 ```

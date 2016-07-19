@@ -15,7 +15,14 @@ var fs = require('fs');
 gulp.task("serve", function() {
 
   browserSync.init({
-    server: { baseDir: __dirname }
+    
+    server: { 
+      baseDir: "./",
+      index: "index.html"
+    },
+    
+    port: 3000
+    
   });
 
   gulp.watch("./static/styl/**/*.styl", ['stylus']);
