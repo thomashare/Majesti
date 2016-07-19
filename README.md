@@ -32,7 +32,9 @@ Allow the gulp command to keep running while you develop your site.
 Anytime you wish to restart development, use Terminal or git bash to change to your project directory and type ``gulp`` and hit Enter.
 
 **Majesti** will do all of the preprocessing and compression for you. Allowing you to focus on the important stuff.
+
 ___
+
 #### Features
 - Majesti will convert your stylus files to css and add the browser prefixes where necessary.
 - Converts all template pug files to html files and places them in the root directory.
