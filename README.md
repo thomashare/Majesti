@@ -40,8 +40,10 @@ ___
 - Converts each svg file placed or saved in the static/svg folder to a png file and places it in the static/img folder.
 - Converts each coffee file placed or saved in the static/coffee folder to a js file and places it in the static/js folder.
 - Optimizes all js files placed or saved in the static/js folder.
-___
-###How Majesti works
+
+___  
+
+### How Majesti works
 - Scanning
   - Majesti will watch all pug files for changes and convert them into html pages, placing them inside the root directories' pages folder
   - All styl files inside the static directory will be watched for changes and converted to css inside the static/css directory.
