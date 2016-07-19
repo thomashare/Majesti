@@ -31,7 +31,7 @@ Open _gulpfile.js_ with your text editor and change the ``serverAddress`` variab
 Allow the gulp command to keep running while you develop your site.  
 Anytime you wish to restart development, use Terminal or git bash to change to your project directory and type ``gulp`` and hit Enter.
 
-**Majesti** will do all of the preprocessing and compression for you. Allowing you to focus on the important stuff.
+**Majesti** will do all of the preprocessing and compression for you. Allowing you to focus on the important stuff.  
 
 ___
 
@@ -42,7 +42,8 @@ ___
 - Converts each svg file placed or saved in the static/svg folder to a png file and places it in the static/img folder.
 - Converts each coffee file placed or saved in the static/coffee folder to a js file and places it in the static/js folder.
 - Optimizes all js files placed or saved in the static/js folder.  
-___  
+
+--- 
 
 ### How Majesti works
 - Scanning
@@ -55,5 +56,6 @@ ___
     **Note:** If 'home' is used, the link to your home page will be something like ``domain.com/pages/home`` rather than ``domain.com/pages/index``.
     
 ___
+
 ### Coming Soon
 - Category pages
