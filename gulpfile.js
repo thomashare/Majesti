@@ -31,7 +31,7 @@ gulp.task("serve", function() {
 // Convert pug files to html and move to the pages folder in the root directory
 gulp.task("pug", function buildHTML() {
   
-  return gulp.src(['./templates/pages/!(global)/*.pug', './templates/pages/*.pug'])
+  return gulp.src(['./templates/pages/!(global)/*.pug', './templates/pages/!(no-content).pug'])
     .pipe(pug())
     .pipe(gulp.dest("./pages"))
     .pipe(browserSync.stream());
