@@ -7,7 +7,10 @@ Majesti was created to provide a starter template for web developers that uses t
 **Majesti** uses [Gulp](http://gulpjs.com), [BrowserSync](https://www.browsersync.io), [Stylus](http://stylus-lang.com), [Pug](http://jade-lang.com), [CSS-Nano](http://cssnano.co), [Autoprefixer](https://github.com/postcss/autoprefixer), [Coffeescript](http://coffeescript.org/) and [Uglify](https://github.com/mishoo/UglifyJS) to speed up your workflow and get things done.
 
 ### Basic Usage
-Installation is simple. Either clone or download to the directory you want to place your site. Rename the folder to the name of your project.
+Installation is simple.
+- Either clone this git repo or download it to the directory you want to place your site. Then rename the folder to the name of your project.
+- In Terminal or git bash, type ``npm install majesti`` or ``bower install majesti`` in the directory you wish to install Majesti.
+ - Depending on which package manager you used to install, you may have to move Majesti out of the 'node_modules' or 'bower_components' folder.
 
 You will have these files:
 ```

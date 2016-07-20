@@ -26,8 +26,8 @@ gulp.task("serve", function() {
   });
 
   gulp.watch("./static/styl/**/*.styl", ['stylus']);
-  gulp.watch("./*.pug", ['pug']);
   gulp.watch("./templates/**/*.pug", ['pug', 'index-to-root']);
+  gulp.watch("./index.html", ['pug']);
   gulp.watch("./static/coffee/**/*.coffee", ['coffeescript']);
   gulp.watch("./static/svg/**/*.svg", ['svgo']);
   
