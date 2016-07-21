@@ -12,22 +12,20 @@ var rename = require('gulp-rename');
 var fs = require('fs');
 
 // Static Server + watching styl/jade files
-gulp.task("serve", function() {
+gulp.task("serve", ['pug', 'index-to-root', 'stylus', 'svgo', 'coffeescript'], function() {
 
   browserSync.init({
     
-    server: { 
+    server: {
       baseDir: "./",
-      index: "index.html"
-    },
-    
-    port: 3000
+      index: "index.html",
+    }
     
   });
 
+  gulp.watch("./index.html").on("change", browserSync.reload);
   gulp.watch("./static/styl/**/*.styl", ['stylus']);
   gulp.watch("./templates/**/*.pug", ['pug', 'index-to-root']);
-  gulp.watch("./index.html", ['pug']);
   gulp.watch("./static/svg/**/*.svg");
   gulp.watch("./static/coffee/**/*.coffee", ['coffeescript']);
   gulp.watch("./static/svg/**/*.svg", ['svgo']);
@@ -87,4 +85,4 @@ gulp.task("coffeescript", function() {
   
 });
 
-gulp.task('default', ['stylus', 'pug', 'index-to-root', 'svgo', 'coffeescript', 'serve']);
+gulp.task('default', ['serve']);
