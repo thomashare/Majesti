@@ -59,8 +59,3 @@ ___
   - The home/index page's index file is automatically copied to the root directory as 'index.html'.
   - It's strongly advised to use one or the other in your pages 'index' or 'home'.  
     **Note:** If 'home' is used, the link to your home page will be something like 'domain.com/pages/home' rather than 'domain.com/pages/index'.
-    
-___
-
-### Coming Soon
-- Category pages
